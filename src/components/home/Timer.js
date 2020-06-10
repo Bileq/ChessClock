@@ -1,9 +1,11 @@
 import React from 'react';
+import Moves from './Moves';
 
 function Timer() {
     return (
         <button style={timerStyle}>
             10:00
+            <Moves />
         </button>
     );
 }
