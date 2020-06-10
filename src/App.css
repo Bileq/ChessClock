@@ -11,4 +11,10 @@
   position: relative;
   opacity: 0.9;
 }
-  
+@keyframes rotateSettings {
+  from {rotate: 0;}
+  to {rotate: 360deg;}
+}
+.settingsBtn:hover{
+  animation: rotateSettings 1s;
+}
