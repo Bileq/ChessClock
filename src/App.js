@@ -30,7 +30,7 @@ const videoStyle = {
   maxHeight: '100%',
   objectFit: 'cover',
   transform: 'translate(-50%, -50%)',
-  zIndex: '1', 
+  zIndex: '-1', 
   opacity: '0.3'
 }
 
