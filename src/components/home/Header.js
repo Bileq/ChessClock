@@ -13,7 +13,7 @@ const headerStyle = {
     padding: '60px',
     textAlign: 'center',
     fontSize: '104px',
-    backgroundColor: '#222',
+    //backgroundColor: '#222',
     border: '1px solid red',
 };
 

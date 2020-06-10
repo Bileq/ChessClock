@@ -5,10 +5,8 @@ function Field() {
     return (
         <div style={fieldStyle}>
             {/*<Timer />
-            <Timer />\
-           //UPDATE FIELD  
+            <Timer />*/}
             
-            */}
         </div>
     );
 }
@@ -17,7 +15,7 @@ const fieldStyle = {
     color: '#ddd',
     padding: '90px',
     border: '1px solid red',
-    backgroundColor: 'darkgreen',
+    //backgroundColor: 'darkgreen',
     marginTop: '100px',
     width: '50%',
     marginLeft: '25%',
