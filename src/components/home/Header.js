@@ -1,23 +1,15 @@
 import React from 'react';
-import settings from './settings.svg';
 import '../../App.css';
+import SettingsToggleButton from '../settings/SettingsToggleButton';
 
 
-function Header() {
-    return (
+const Header = props => (
+    
         <header style={headerStyle}>
-            <button className='settingsBtn' style={{
-                position: 'fixed',
-                top: '90px',
-                left: '15%',
-                borderRadius: '25px',                  
-            }}>
-            <img src={settings} alt="settings icon" style={imgStyle} /></button>       
+          <SettingsToggleButton click={props.settingsClickHandler}/>       
             Chess Clock
         </header>
-    );
-}
-
+    )
 
 
 const headerStyle = {
@@ -28,14 +20,6 @@ const headerStyle = {
     border: '1px solid red',
     opacity: '0.8',
 }
-
-const imgStyle = {
-    backgroundColor: '#ff0',
-    height: '65px',
-    width: '65px',
-    borderRadius: '30px',
-}
-
 
 
 export default Header;

@@ -9,6 +9,7 @@ const Settings = props => (
             <ul>
                 <li><a href="/">Player 1</a></li>
                 <li><a href="/">Player 2</a></li>
+                <button onClick={props.click}>X</button>
             </ul>  
         </nav>   
     );
