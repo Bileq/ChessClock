@@ -1,20 +1,24 @@
 import React from 'react';
-import settings from './settings3.svg';
+import settings from './settings.svg';
+import '../../App.css';
+
 
 function Header() {
     return (
         <header style={headerStyle}>
-             <button className='settingsBtn' style={{
-                  position: 'fixed',
-                  top: '90px',
-                  left: '15%',
-                  borderRadius: '25px',                  
-             }}>
-             <img src={settings} alt="settings icon" style={imgStyle} /></button>
+            <button className='settingsBtn' style={{
+                position: 'fixed',
+                top: '90px',
+                left: '15%',
+                borderRadius: '25px',                  
+            }}>
+            <img src={settings} alt="settings icon" style={imgStyle} /></button>       
             Chess Clock
         </header>
     );
 }
+
+
 
 const headerStyle = {
     color: '#fff',

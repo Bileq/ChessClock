@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/home/Header';
 import Field from './components/home/Field';
 import chess from './video/chess.mp4';
+import Settings from './components/settings/settings';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <source src={chess} type="video/mp4" />
         </video>
       <Header />
+      <Settings />
       <Field />
     </div>
   );
