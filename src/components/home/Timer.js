@@ -17,7 +17,7 @@ const timerStyle = {
     marginTop: '5px',
     width: '100%',
     height: '240px',
-    backgroundColor: 'black',
+    backgroundColor: 'rgba(5, 2, 2, 0.5)',
     cursor: 'pointer'
 };
 

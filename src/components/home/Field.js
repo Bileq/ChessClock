@@ -13,7 +13,6 @@ function Field() {
 
 const fieldStyle = {
     color: '#ddd',
-    border: '1px solid blue',
     marginTop: '100px',
     width: '50%',
     marginLeft: '25%',

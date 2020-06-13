@@ -11,7 +11,7 @@ import Backdrop from './components/settings/Backdrop';
 
 class App extends Component {
   state = {
-    settingsOpen: true
+    settingsOpen: false
   };
 
   settingsToggleClickHandler = () => {
