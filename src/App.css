@@ -28,11 +28,9 @@
   max-width: 400px;
   height: 100%;
   z-index: 200;
-  transform: translateX(-100%);
+  background-color: white;
 }
-.settings.open {
-  transform: translateX(0);
-}
+
 .settings a {
   color: white;
   text-decoration: none;

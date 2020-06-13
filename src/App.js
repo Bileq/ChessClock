@@ -33,6 +33,7 @@ class App extends Component {
       settings = <Settings click={this.backdropClickHandler}/>
       backdrop = <Backdrop />
     }
+
     return (
       <div className="App">
           <video
