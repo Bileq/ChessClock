@@ -18,6 +18,7 @@ const timerStyle = {
     width: '100%',
     height: '240px',
     backgroundColor: 'black',
+    cursor: 'pointer'
 };
 
 export default Timer;

@@ -4,31 +4,57 @@
   padding: 0;
 }
 .App{
+  background-color: black;
   text-align: center;
   top: 0;
   left: 0;
   height: 100vh;
   position: relative;
-  opacity: 0.9;
+  z-index: 100;
 }
-@keyframes rotateSettings {
+@keyframes rotateSettings
+ {
   from {rotate: 0;}
   to {rotate: 360deg;}
 }
+@keyframes rotateSettingsBackwards {
+  from {rotate: 360deg;}
+  to {rotate: 0;}
+}
+@-webkit-keyframes rotateSettings
+ {
+  from {rotate: 0;}
+  to {rotate: 360deg;}
+}
+@-webkit-keyframes rotateSettingsBackwards {
+  from {rotate: 360deg;}
+  to {rotate: 0;}
+}
 .settingsBtn:hover{
+  -webkit-animation: rotateSettings 1s;
+  -moz-animation: rotateSettings 1s;
+  -o-animation: rotateSettings 1s;
   animation: rotateSettings 1s;
+  cursor: pointer;
+}
+.closeButton:hover{
+  -webkit-animation: rotateSettingsBackwards 1s;
+  -moz-animation: rotateSettingsBackwards 1s;
+  -o-animation: rotateSettingsBackwards 1s;
+  animation: rotateSettingsBackwards 1s;
+  cursor: pointer;
 }
 .settings {
+  color: white;
   background: black;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0px 5px rgba(5, 2, 2, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   width: 25%;
   max-width: 400px;
-  height: 100%;
+  min-height: 100%;
   z-index: 200;
-  background-color: white;
 }
 
 .settings a {
@@ -45,12 +71,33 @@
 .settings li {
   padding: 0 0.5rem;
 }
+.settingsTitle{
+  text-align: left;
+  padding: 50px 0 50px 35px;
+  font-size: 48px;
+}
+.player{
+  padding: 30px;
+  font-size: 28px;
+}
 .backdrop {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 100;
   top: 0;
   left: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.clocks{
+  margin-right: 10%;
+  padding: 20px;
 }
