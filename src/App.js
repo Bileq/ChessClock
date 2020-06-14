@@ -11,7 +11,14 @@ import Backdrop from './components/settings/Backdrop';
 
 class App extends Component {
   state = {
-    settingsOpen: true
+    settingsOpen: true,
+    hours: '',
+    minutes: '',
+    seconds: '',
+    hoursIncr: '',
+    minutesIncr: '',
+    secondsIncr: ''
+   
   };
 
   settingsToggleClickHandler = () => {
@@ -24,13 +31,26 @@ class App extends Component {
     this.setState({settingsOpen: false}); 
   };
 
+  time = () => {/*
+      hours: hours; 
+      minutes: minutes; 
+      seconds: seconds;
+      hoursIncr: hoursIncr;
+      minutesIncr: minutesIncr;
+      secondsIncr: secondsIncr;*/
+
+      const siema = console.log("siema");
+    
+    
+  }
+
 
   render() {
     let settings;
     let backdrop;
 
     if(this.state.settingsOpen) {
-      settings = <Settings click={this.backdropClickHandler}/>
+      settings = <Settings click={this.backdropClickHandler} time={this.time}/>
       backdrop = <Backdrop />
     }
 

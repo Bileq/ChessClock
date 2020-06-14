@@ -14,7 +14,7 @@ export class Time extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.Time(
+        this.props.time(
             this.state.hours, 
             this.state.minutes, 
             this.state.seconds,
