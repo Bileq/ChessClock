@@ -3,28 +3,37 @@ import '../../App.css';
 
 
 export class Time extends Component {
-    state = {
-        hours: '',
-        minutes: '',
-        seconds: '',
-        hoursIncr: '',
-        minutesIncr: '',
-        secondsIncr: ''
-    } 
+    constructor(props){
+        super(props)
+        this.state = {
+            hours: '',
+            minutes: '',
+            seconds: '',
+            hoursIncr: '',
+            minutesIncr: '',
+            secondsIncr: ''
+        }
+    }
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.time(
-            this.state.hours, 
-            this.state.minutes, 
-            this.state.seconds,
-            this.state.hoursIncr,
-            this.state.minutesIncr,
-            this.state.secondsIncr
-            );
-        this.setState({hours: '', minutes: '', seconds: '',
-        hoursIncr: '', minutesIncr: '', secondsIncr: ''
-    });
+        const hours = this.state.hours;
+        const minutes = this.state.minutes;
+        const seconds = this.state.seconds;
+        const hoursIncr = this.state.hoursIncr;
+        const minutesIncr = this.state.minutesIncr;
+        const secondsIncr = this.state.secondsIncr;
+        console.log(`Time is:
+        Hours: ${hours}
+        Minutes: ${minutes}
+        Seconds: ${seconds}
+
+        Increment:
+
+        Hours: ${hoursIncr}
+        Minutes: ${minutesIncr}
+        Seconds: ${secondsIncr}
+        `);
     }
     
     onChange = e => {
@@ -32,6 +41,7 @@ export class Time extends Component {
     }
     
     render() {
+        
         return (
             <div className="clocks">
                 <form onSubmit={this.onSubmit}>
@@ -45,14 +55,15 @@ export class Time extends Component {
                     max="24" 
                     placeholder="Hours"
                     name="hours"
-                    value={this.state.hours}
                     onChange={this.onChange}
                     style={{
                         border: 'none',
                         margin: '0 5px 0 45px',
                         width: '60px'
                         }}
+                        
                     />
+                    
                     :
                     <input 
                     type="number"
@@ -60,7 +71,6 @@ export class Time extends Component {
                     max="60" 
                     placeholder="Minutes"
                     name="minutes"
-                    value={this.state.minutes}
                     onChange={this.onChange}
                     style={{
                         border: 'none',
@@ -75,7 +85,6 @@ export class Time extends Component {
                     max="60" 
                     placeholder="Seconds"
                     name="seconds"
-                    value={this.state.seconds}
                     onChange={this.onChange}
                     style={{
                         border: 'none',
@@ -97,7 +106,6 @@ export class Time extends Component {
                         max="24" 
                         placeholder="Hours"
                         name="hoursIncr"
-                        value={this.state.hoursIncr}
                         onChange={this.onChange}
                         style={{
                             border: 'none',
@@ -112,7 +120,6 @@ export class Time extends Component {
                         max="60" 
                         placeholder="Minutes"
                         name="minutesIncr"
-                        value={this.state.minutesIncr}
                         onChange={this.onChange}
                         style={{
                             border: 'none',
@@ -127,7 +134,6 @@ export class Time extends Component {
                         max="60" 
                         placeholder="Seconds"
                         name="secondsIncr"
-                        value={this.state.secondsIncr}
                         onChange={this.onChange}
                         style={{
                             border: 'none',

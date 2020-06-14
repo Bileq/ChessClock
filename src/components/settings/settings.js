@@ -8,9 +8,9 @@ const Settings = props => (
                 <div className="settingsTitle">Settings</div>
             <ul>
                 <li><div className="player">Player 1</div></li>
-                <Time time={props.time}/>
+                <Time />
                 <li><div className="player">Player 2</div></li>
-                <Time time={props.time}/>
+                <Time />
                 <li>
                 <button 
                 type="button"
