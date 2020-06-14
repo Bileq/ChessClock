@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import Time from './Time';
-import Increment from './Increment';
 
 
 const Settings = props => (
@@ -10,30 +9,28 @@ const Settings = props => (
             <ul>
                 <li><div className="player">Player 1</div></li>
                 <Time />
-                <Increment />
                 <li><div className="player">Player 2</div></li>
                 <Time />
-                <Increment />
+                <li>
                 <button 
                 type="button"
                 style={closeButton} 
                 className="closeButton"
                 onClick={props.click}>X
                 </button>
+                </li>
             </ul>  
         </nav>   
     );
 
 const closeButton = {
-  borderRadius: '50px',
+  borderRadius: '50%',
   backgroundColor: 'red',
   cursor: 'pointer',
   width: '50px',
   height: '50px',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  marginTop: '50px',
-  marginBottom: '50px',
+  textAlign: 'center',
+  margin: '130px 10px 50px 0',
   fontSize: '30px',
   fontWeight: '500'
 }

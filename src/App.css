@@ -52,7 +52,7 @@
   flex-direction: column;
 }
 .settings li {
-  padding: 0 0.5rem;
+  width: 100%;
 }
 .settingsTitle{
   text-align: left;
@@ -81,6 +81,14 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 .clocks{
-  margin-right: 10%;
-  padding: 20px;
+  text-align: left;
+  padding: 20px 0 20px 20px;
+  width: 100%;
+}
+.checkBtn{
+  -webkit-transition: -webkit-transform 0.4s;
+}
+.checkBtn:hover{
+  -webkit-transform: scale(1.2);
+  cursor: pointer;
 }
