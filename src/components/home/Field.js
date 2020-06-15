@@ -1,5 +1,6 @@
 import React from 'react';
 import Timer from './Timer';
+import TimerTwo from './TimerTwo'
 
 const Field = props => {
     return (
@@ -9,11 +10,17 @@ const Field = props => {
             hours={props.hours}
             minutes={props.minutes}
             seconds={props.seconds}
+            hoursIncr={props.hoursIncr}
+            minutesIncr={props.minutesIncr}
+            secondsIncr={props.secondsIncr}
             />
-            <Timer 
-            hours={props.hours}
-            minutes={props.minutes}
-            seconds={props.seconds}
+            <TimerTwo 
+            hoursTwo={props.hoursTwo}
+            minutesTwo={props.minutesTwo}
+            secondsTwo={props.secondsTwo}
+            hoursIncrTwo={props.hoursIncrTwo}
+            minutesIncrTwo={props.minutesIncrTwo}
+            secondsIncrTwo={props.secondsIncrTwo}
             /> 
             {/* moves component */}
         </div>

@@ -15,7 +15,13 @@ class App extends Component {
     seconds: 0,
     hoursIncr: 0,
     minutesIncr: 0,
-    secondsIncr: 0
+    secondsIncr: 0,
+    hoursTwo: 0,
+    minutesTwo: 0,
+    secondsTwo: 0,
+    hoursIncrTwo: 0,
+    minutesIncrTwo: 0,
+    secondsIncrTwo: 0,
   };
 
   settingsToggleClickHandler = () => {
@@ -35,23 +41,36 @@ class App extends Component {
     seconds,
     hoursIncr,
     minutesIncr,
-    secondsIncr
+    secondsIncr,
     }
+    //sets typed time to state
     this.setState({
       hours,
       minutes,
       seconds,
       hoursIncr,
       minutesIncr,
-      secondsIncr
-    })
-    //dis
-    //displayTime: {hours} 
-    //console.log(displayTime);
-    //return (<div>{siema}</div>)
-      
+      secondsIncr,
+    })      
     }
-  
+  timeTwo = (hoursTwo, minutesTwo, secondsTwo, hoursIncrTwo, minutesIncrTwo, secondsIncrTwo) => {
+    const timeTwo = {
+      hoursTwo,
+      minutesTwo,
+      secondsTwo,
+      hoursIncrTwo,
+      minutesIncrTwo,
+      secondsIncrTwo,
+    }
+    this.setState({
+      hoursTwo,
+      minutesTwo,
+      secondsTwo,
+      hoursIncrTwo,
+      minutesIncrTwo,
+      secondsIncrTwo,
+    })
+  }
   
 
   render() {
@@ -60,7 +79,7 @@ class App extends Component {
     
     if(this.state.settingsOpen) {
       settings = <Settings click={this.backdropClickHandler}
-                  time={this.time}/>    
+                  time={this.time} timeTwo={this.timeTwo}/>    
       backdrop = <Backdrop />
     }
 
@@ -81,6 +100,15 @@ class App extends Component {
         hours={this.state.hours}
         minutes={this.state.minutes}
         seconds={this.state.seconds}
+        hoursIncr={this.state.hoursIncr}
+        minutesIncr={this.state.minutesIncr}
+        secondsIncr={this.state.secondsIncr}
+        hoursTwo={this.state.hoursTwo}
+        minutesTwo={this.state.minutesTwo}
+        secondsTwo={this.state.secondsTwo}
+        hoursIncrTwo={this.state.hoursIncrTwo}
+        minutesIncrTwo={this.state.minutesIncrTwo}
+        secondsIncrTwo={this.state.secondsIncrTwo}
         />
       </div>
     );

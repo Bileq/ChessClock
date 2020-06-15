@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
-import Time from './Time';
+import PlayerOne from './PlayerOne';
+import PlayerTwo from './PlayerTwo';
 
 
 const Settings = props => (
@@ -8,9 +9,9 @@ const Settings = props => (
                 <div className="settingsTitle">Settings</div>
             <ul>
                 <li><div className="player">Player 1</div></li>
-                <Time time={props.time}/>
+                <PlayerOne time={props.time}/>
                 <li><div className="player">Player 2</div></li>
-                <Time time={props.time}/>
+                <PlayerTwo timeTwo={props.timeTwo}/>
                 <li>
                 <button 
                 type="button"

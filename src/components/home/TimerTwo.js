@@ -1,16 +1,16 @@
 import React from 'react';
 import Moves from './Moves';
 
-const Timer = props =>{
+const TimerTwo = props =>{
     return (
         <button style={timerStyle}>
-            {props.hours}:
-            {props.minutes}:
-            {props.seconds}
+            {props.hoursTwo}:
+            {props.minutesTwo}:
+            {props.secondsTwo}
             {/* Unnecessary
-            {props.hoursIncr}:
-            {props.minutesIncr}:
-            {props.secondsIncr}
+            {props.hoursIncrTwo}:
+            {props.minutesIncrTwo}:
+            {props.secondsIncrTwo}
             */}
             <Moves />
         </button>
@@ -28,4 +28,4 @@ const timerStyle = {
     cursor: 'pointer'
 };
 
-export default Timer;
+export default TimerTwo;

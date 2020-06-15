@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import '../../App.css';
-//import Timer from '../home/Timer';
 
 
-export class Time extends Component {
+export class PlayerOne extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -35,9 +34,7 @@ export class Time extends Component {
     
     render() {
         return (
-            <div className="clocks">
-                {/*<Timer hours={this.state.hours}/>*/}
-                
+            <div className="clocks">                
                 <form onSubmit={this.onSubmit} >
                 
                     {/* Time */}
@@ -164,4 +161,4 @@ const btnStyle = {
 
 
 
-export default Time;
+export default PlayerOne;
