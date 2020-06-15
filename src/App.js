@@ -10,6 +10,7 @@ import Backdrop from './components/settings/Backdrop';
 class App extends Component {
   state = {
     settingsOpen: false,
+    playerOneTurn: false,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -72,6 +73,10 @@ class App extends Component {
     })
   }
   
+  onClickTimer = () => {
+    //this.setState({playerOneTurn = !playerOneTurn})
+    console.log("onClickTimer")
+  }
 
   render() {
     let settings;
@@ -79,7 +84,8 @@ class App extends Component {
     
     if(this.state.settingsOpen) {
       settings = <Settings click={this.backdropClickHandler}
-                  time={this.time} timeTwo={this.timeTwo}/>    
+                  time={this.time} timeTwo={this.timeTwo}
+                  />    
       backdrop = <Backdrop />
     }
 
@@ -109,6 +115,8 @@ class App extends Component {
         hoursIncrTwo={this.state.hoursIncrTwo}
         minutesIncrTwo={this.state.minutesIncrTwo}
         secondsIncrTwo={this.state.secondsIncrTwo}
+        playerOneTurn={this.state.playerOneTurn}
+        onClickTimer={this.onClickTimer}
         />
       </div>
     );

@@ -2,8 +2,16 @@ import React from 'react';
 import Moves from './Moves';
 
 const Timer = props =>{
+    
+    //const playerOneTurn = props.playerOneTurn
+    /*
+    const onClick = () => {
+        props.playerOneTurn = true;
+    }*/
+    
+  
     return (
-        <button style={timerStyle}>
+        <button style={timerStyle} onClick={props.onClickTimer}>
             {props.hours}:
             {props.minutes}:
             {props.seconds}

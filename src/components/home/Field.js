@@ -13,6 +13,8 @@ const Field = props => {
             hoursIncr={props.hoursIncr}
             minutesIncr={props.minutesIncr}
             secondsIncr={props.secondsIncr}
+            playerOneTurn={props.playerOneTurn}
+            onClickTimer={props.onClickTimer}
             />
             <TimerTwo 
             hoursTwo={props.hoursTwo}
@@ -21,6 +23,8 @@ const Field = props => {
             hoursIncrTwo={props.hoursIncrTwo}
             minutesIncrTwo={props.minutesIncrTwo}
             secondsIncrTwo={props.secondsIncrTwo}
+            playerOneTurn={props.playerOneTurn}
+            onClickTimer={props.onClickTimer}
             /> 
             {/* moves component */}
         </div>

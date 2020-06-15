@@ -3,7 +3,7 @@ import Moves from './Moves';
 
 const TimerTwo = props =>{
     return (
-        <button style={timerStyle}>
+        <button style={timerStyle} onClick={props.onClickTimer}>
             {props.hoursTwo}:
             {props.minutesTwo}:
             {props.secondsTwo}
