@@ -7,11 +7,15 @@ import Settings from './components/settings/Settings';
 import Backdrop from './components/settings/Backdrop';
 
 
-
-
 class App extends Component {
   state = {
-    settingsOpen: true,
+    settingsOpen: false,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    hoursIncr: 0,
+    minutesIncr: 0,
+    secondsIncr: 0
   };
 
   settingsToggleClickHandler = () => {
@@ -24,13 +28,39 @@ class App extends Component {
     this.setState({settingsOpen: false}); 
   };
 
+  time = (hours, minutes, seconds, hoursIncr, minutesIncr, secondsIncr) => {
+    const time = {
+    hours,
+    minutes,
+    seconds,
+    hoursIncr,
+    minutesIncr,
+    secondsIncr
+    }
+    this.setState({
+      hours,
+      minutes,
+      seconds,
+      hoursIncr,
+      minutesIncr,
+      secondsIncr
+    })
+    //dis
+    //displayTime: {hours} 
+    //console.log(displayTime);
+    //return (<div>{siema}</div>)
+      
+    }
+  
+  
 
   render() {
     let settings;
     let backdrop;
-
+    
     if(this.state.settingsOpen) {
-      settings = <Settings click={this.backdropClickHandler}/>    
+      settings = <Settings click={this.backdropClickHandler}
+                  time={this.time}/>    
       backdrop = <Backdrop />
     }
 
@@ -47,7 +77,11 @@ class App extends Component {
         <Header settingsClickHandler={this.settingsToggleClickHandler}/>
         {settings}
         {backdrop}
-        <Field />
+        <Field 
+        hours={this.state.hours}
+        minutes={this.state.minutes}
+        seconds={this.state.seconds}
+        />
       </div>
     );
   }

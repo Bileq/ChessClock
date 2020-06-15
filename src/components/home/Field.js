@@ -1,11 +1,20 @@
 import React from 'react';
 import Timer from './Timer';
 
-function Field() {
+const Field = props => {
     return (
         <div style={fieldStyle}>
-            <Timer />
-            <Timer /> 
+            
+            <Timer 
+            hours={props.hours}
+            minutes={props.minutes}
+            seconds={props.seconds}
+            />
+            <Timer 
+            hours={props.hours}
+            minutes={props.minutes}
+            seconds={props.seconds}
+            /> 
             {/* moves component */}
         </div>
     );

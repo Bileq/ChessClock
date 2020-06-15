@@ -1,10 +1,12 @@
 import React from 'react';
 import Moves from './Moves';
 
-function Timer() {
+const Timer = props =>{
     return (
         <button style={timerStyle}>
-            10:00
+            {props.hours}:
+            {props.minutes}:
+            {props.seconds}
             <Moves />
         </button>
     );

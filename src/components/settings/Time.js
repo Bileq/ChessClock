@@ -1,51 +1,45 @@
 import React, { Component } from 'react'
 import '../../App.css';
+//import Timer from '../home/Timer';
 
 
 export class Time extends Component {
     constructor(props){
         super(props)
         this.state = {
-            hours: '',
-            minutes: '',
-            seconds: '',
-            hoursIncr: '',
-            minutesIncr: '',
-            secondsIncr: ''
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+            hoursIncr: 0,
+            minutesIncr: 0,
+            secondsIncr: 0
         }
     }
 
     onSubmit = e => {
         e.preventDefault();
-        const hours = this.state.hours;
-        const minutes = this.state.minutes;
-        const seconds = this.state.seconds;
-        const hoursIncr = this.state.hoursIncr;
-        const minutesIncr = this.state.minutesIncr;
-        const secondsIncr = this.state.secondsIncr;
-        console.log(`Time is:
-        Hours: ${hours}
-        Minutes: ${minutes}
-        Seconds: ${seconds}
-
-        Increment:
-
-        Hours: ${hoursIncr}
-        Minutes: ${minutesIncr}
-        Seconds: ${secondsIncr}
-        `);
+        this.props.time(
+        this.state.hours,
+        this.state.minutes,
+        this.state.seconds,
+        this.state.hoursIncr,
+        this.state.minutesIncr,
+        this.state.secondsIncr,
+        )
+            
     }
-    
+     
     onChange = e => {
         this.setState({ [e.target.name] : e.target.value});
     }
     
     render() {
-        
         return (
             <div className="clocks">
-                <form onSubmit={this.onSubmit}>
-
+                {/*<Timer hours={this.state.hours}/>*/}
+                
+                <form onSubmit={this.onSubmit} >
+                
                     {/* Time */}
 
                     Time: 
