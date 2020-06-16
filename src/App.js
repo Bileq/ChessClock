@@ -10,7 +10,7 @@ import Backdrop from './components/settings/Backdrop';
 class App extends Component {
   state = {
     settingsOpen: false,
-    playerOneTurn: false,
+    playerOneTurn: true,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -74,7 +74,9 @@ class App extends Component {
   }
   
   onClickTimer = () => {
-    //this.setState({playerOneTurn = !playerOneTurn})
+    this.setState(prevState => {
+      return {playerOneTurn: !prevState.playerOneTurn}
+    })
     console.log("onClickTimer")
   }
 
