@@ -14,7 +14,6 @@ const Field = props => {
             secondsIncr={props.secondsIncr}
             playerOneTurn={props.playerOneTurn}
             onClickTimer={props.onClickTimer}
-            count={props.count}
             />
             <TimerTwo 
             hoursTwo={props.hoursTwo}
@@ -25,7 +24,6 @@ const Field = props => {
             secondsIncrTwo={props.secondsIncrTwo}
             playerOneTurn={props.playerOneTurn}
             onClickTimer={props.onClickTimer}
-            count={props.count}
             /> 
             {/* moves component */}
         </div>
