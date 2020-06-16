@@ -79,7 +79,7 @@ class App extends Component {
     })
     console.log("onClickTimer")
   }
-
+/*
   componentDidMount () {
     this.myInterval = setInterval(() => {
       if(this.state.playerOneTurn === false){
@@ -98,6 +98,30 @@ class App extends Component {
       
     }, 1000)
   }
+
+  componentWillUnmount () {
+    clearInterval(this.myInterval)
+  }
+*/
+count = () => {
+  this.myInterval = setInterval(() => {
+    if(this.state.playerOneTurn === false){
+      this.setState(prevState => ({
+        hours: prevState.hours - 1,
+        minutes: prevState.minutes - 1,
+        seconds: prevState.seconds - 1,
+      }))
+    } else {
+      this.setState(prevState => ({
+        hoursTwo: prevState.hoursTwo - 1,
+        minutesTwo: prevState.minutesTwo - 1,
+        secondsTwo: prevState.secondsTwo - 1,
+      }))
+    }
+    
+  }, 1000)
+}
+
   render() {
     let settings;
     let backdrop;
@@ -137,6 +161,7 @@ class App extends Component {
         secondsIncrTwo={this.state.secondsIncrTwo}
         playerOneTurn={this.state.playerOneTurn}
         onClickTimer={this.onClickTimer}
+        count={this.count}
         />
       </div>
     );
