@@ -4,7 +4,7 @@ import Moves from './Moves';
 const Timer = props => {
     const handleItemList = () => {
         props.onClickTimer()
-        props.count()
+        //props.count()
     }
     return (
        

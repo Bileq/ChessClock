@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     settingsOpen: false,
     playerOneTurn: true,
+    gameStart: false,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -80,47 +81,118 @@ class App extends Component {
     console.log("onClickTimer")
   }
 /*
-  componentDidMount () {
-    this.myInterval = setInterval(() => {
-      if(this.state.playerOneTurn === false){
-        this.setState(prevState => ({
-          hours: prevState.hours - 1,
-          minutes: prevState.minutes - 1,
-          seconds: prevState.seconds - 1,
-        }))
-      } else {
-        this.setState(prevState => ({
-          hoursTwo: prevState.hoursTwo - 1,
-          minutesTwo: prevState.minutesTwo - 1,
-          secondsTwo: prevState.secondsTwo - 1,
-        }))
-      }
-      
-    }, 1000)
-  }
-
-  componentWillUnmount () {
-    clearInterval(this.myInterval)
-  }
-*/
 count = () => {
+  let count = 1;
+  let countTwo = 1; 
   this.myInterval = setInterval(() => {
-    if(this.state.playerOneTurn === false){
-      this.setState(prevState => ({
-        hours: prevState.hours - 1,
-        minutes: prevState.minutes - 1,
-        seconds: prevState.seconds - 1,
-      }))
-    } else {
-      this.setState(prevState => ({
-        hoursTwo: prevState.hoursTwo - 1,
-        minutesTwo: prevState.minutesTwo - 1,
-        secondsTwo: prevState.secondsTwo - 1,
-      }))
+      if(this.state.playerOneTurn === false){
+          this.setState({minutes: this.state.minutes - 1, hours: this.state.hours - 1, seconds: this.state.seconds - 1}) 
+      }
+         
+        
+     else {
+      this.setState({minutesTwo: this.state.minutesTwo - 1, hoursTwo: this.state.hoursTwo - 1, secondsTwo: this.state.secondsTwo - 1})
     }
     
-  }, 1000)
+  }, 1000) 
+}*/
+
+componentDidMount () {
+    this.myInterval = setInterval(() => {
+      if(this.state.seconds === 0){
+        if(this.state.minutes === 0){
+          if(this.state.hours === 0){
+            this.setState({
+              //Stop of counting
+              seconds: this.state.seconds + 1
+            })
+          } else {
+            this.setState({
+              hours: this.state.hours - 1,
+              minutes: this.state.minutes = 59,
+              seconds: this.state.seconds = 60,
+              
+            })
+            console.log( "tu 1")
+          } 
+        } else { 
+          if(this.state.hours === 0) {
+            this.setState({
+              hours: this.state.hours = 0,
+              seconds: this.state.seconds = 60,
+              minutes: this.state.minutes - 1
+            }) 
+            console.log("minuty else 1")
+          } else if (this.state.minutes === 0) {
+            this.setState({
+              hours: this.state.hours - 1,
+              seconds: this.state.seconds = 60
+            })
+            console.log("minuty else 2")
+          } else {
+            this.setState({
+              minutes: this.state.minutes -1 ,
+              seconds: this.state.seconds = 60,
+              //hours: this.state.hours - 1,
+              
+            })
+            console.log("minuty else 3")
+          }
+        }
+      }
+
+
+
+      if(this.state.secondsTwo === 0){
+        if(this.state.minutesTwo === 0){
+          if(this.state.hoursTwo === 0){
+            this.setState({
+              //Stop of counting
+              secondsTwo: this.state.secondsTwo + 1
+            })
+          } else {
+            this.setState({
+              hoursTwo: this.state.hoursTwo - 1,
+              minutesTwo: this.state.minutesTwo = 59,
+              secondsTwo: this.state.secondsTwo = 60,
+              
+            })
+          } 
+        } else { 
+          if(this.state.hoursTwo === 0) {
+            this.setState({
+              hoursTwo: this.state.hoursTwo = 0,
+              secondsTwo: this.state.secondsTwo = 60,
+              minutesTwo: this.state.minutesTwo - 1
+            }) 
+          } else if (this.state.minutesTwo === 0) {
+            this.setState({
+              hoursTwo: this.state.hoursTwo - 1,
+              secondsTwo: this.state.secondsTwo = 60
+            })
+          } else {
+            this.setState({
+              minutesTwo: this.state.minutesTwo -1 ,
+              secondsTwo: this.state.secondsTwo = 60,
+            })
+          }
+        }
+      }
+
+
+      this.setState(prevState => ({
+        seconds: prevState.seconds - 1,
+        secondsTwo: prevState.secondsTwo - 1,
+      }))
+
+
+    }, 1)
 }
+
+componentWillUnmount () {
+  clearInterval(this.myInterval)
+}
+
 
   render() {
     let settings;
@@ -162,6 +234,8 @@ count = () => {
         playerOneTurn={this.state.playerOneTurn}
         onClickTimer={this.onClickTimer}
         count={this.count}
+        costam={this.costam}
+        gameStart={this.gameStart}
         />
       </div>
     );

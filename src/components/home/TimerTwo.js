@@ -2,8 +2,12 @@ import React from 'react';
 import Moves from './Moves';
 
 const TimerTwo = props => {
+    const handleItemList = () => {
+        props.onClickTimer()
+        
+    }
     return (
-        <button style={timerStyle} onClick={props.onClickTimer}>
+        <button style={timerStyle} onClick={handleItemList}>
             {props.hoursTwo}:
             {props.minutesTwo}:
             {props.secondsTwo}

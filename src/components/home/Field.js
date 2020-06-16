@@ -15,6 +15,7 @@ const Field = props => {
             playerOneTurn={props.playerOneTurn}
             onClickTimer={props.onClickTimer}
             count={props.count}
+            
             />
             <TimerTwo 
             hoursTwo={props.hoursTwo}
