@@ -80,6 +80,10 @@ class App extends Component {
     console.log("onClickTimer")
   }
 
+  count = () => {
+      console.log("count");
+  }
+
   render() {
     let settings;
     let backdrop;
@@ -119,6 +123,7 @@ class App extends Component {
         secondsIncrTwo={this.state.secondsIncrTwo}
         playerOneTurn={this.state.playerOneTurn}
         onClickTimer={this.onClickTimer}
+        count={this.count}
         />
       </div>
     );

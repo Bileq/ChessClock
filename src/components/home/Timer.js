@@ -2,12 +2,12 @@ import React from 'react';
 import Moves from './Moves';
 
 const Timer = props => {
-    /*state = {
-        playerOneTurn: false,
-      
-      };*/
+      const handleListItemClick = () => {
+          props.onClickTimer()
+          props.count()
+      }
     return (
-        <button style={timerStyle} onClick={props.onClickTimer}>
+        <button style={timerStyle} onClick={handleListItemClick}>
             {props.hours}:
             {props.minutes}:
             {props.seconds}
