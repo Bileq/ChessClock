@@ -4,7 +4,6 @@ import SettingsToggleButton from '../settings/SettingsToggleButton';
 
 
 const Header = props => (
-    
         <header style={headerStyle}>
           <SettingsToggleButton click={props.settingsClickHandler}/>       
             Chess Clock

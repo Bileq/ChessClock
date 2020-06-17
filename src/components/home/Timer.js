@@ -1,5 +1,4 @@
 import React from 'react';
-import Moves from './Moves';
 
 const Timer = props => {
     const handleItemList = () => {
@@ -7,17 +6,10 @@ const Timer = props => {
         props.addIncrement()
     }
     return (
-       
         <button style={timerStyle} onClick={handleItemList}>
             {props.hours}:
             {props.minutes}:
             {props.seconds}
-            {/* Unnecessary
-            {props.hoursIncr}:
-            {props.minutesIncr}:
-            {props.secondsIncr}
-            */}
-            <Moves />
         </button>
     );
 }

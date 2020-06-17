@@ -183,18 +183,52 @@ componentWillUnmount () {
 addIncrement = () => {
   if(this.state.playerOneTurn) {
     this.setState({
-      hours: this.state.hours + parseInt(this.state.hoursIncr),
-      minutes: this.state.minutes + parseInt(this.state.minutesIncr),
-      seconds: this.state.seconds + parseInt(this.state.secondsIncr),
+      hours: parseInt(this.state.hours) + parseInt(this.state.hoursIncr),
+      minutes: parseInt(this.state.minutes) + parseInt(this.state.minutesIncr),
+      seconds: parseInt(this.state.seconds) + parseInt(this.state.secondsIncr),
     })
+
+
   } else {
     this.setState({
-      hoursTwo: this.state.hoursTwo + parseInt(this.state.hoursIncrTwo),
-      minutesTwo: this.state.minutesTwo + parseInt(this.state.minutesIncrTwo),
-      secondsTwo: this.state.secondsTwo + parseInt(this.state.secondsIncrTwo),
+      hoursTwo: parseInt(this.state.hoursTwo) + parseInt(this.state.hoursIncrTwo),
+      minutesTwo: parseInt(this.state.minutesTwo) + parseInt(this.state.minutesIncrTwo),
+      secondsTwo: parseInt(this.state.secondsTwo) + parseInt(this.state.secondsIncrTwo),
+    })
+  }
+
+  const secsInTotal = parseInt(this.state.seconds) + parseInt(this.state.secondsIncr)
+  const minutesInTotal = parseInt(this.state.minutes) + parseInt(this.state.minutesIncr)
+  const secsInTotalTwo = parseInt(this.state.secondsTwo) + parseInt(this.state.secondsIncrTwo)
+  const minutesInTotalTwo = parseInt(this.state.minutesTwo) + parseInt(this.state.minutesIncrTwo)
+
+  if(secsInTotal >= 60){
+    this.setState({
+      minutes: this.state.minutes + 1,
+      seconds: secsInTotal - 60
+    })
+  }
+
+  if(minutesInTotal >= 60) {
+    this.setState({
+      hours: parseInt(this.state.hours) + 1,
+      minutes: minutesInTotal - 60
     })
   }
   
+  if(secsInTotalTwo >= 60){
+    this.setState({
+      minutesTwo: this.state.minutesTwo + 1,
+      secondsTwo: secsInTotalTwo - 60
+    })
+  }
+
+  if(minutesInTotalTwo >= 60) {
+    this.setState({
+      hoursTwo: parseInt(this.state.hoursTwo) + 1,
+      minutesTwo: minutesInTotalTwo - 60
+    })
+  }
 }
 
 
@@ -239,8 +273,10 @@ addIncrement = () => {
         onClickTimerPlayerOne={this.onClickTimerPlayerOne}
         onClickTimerPlayerTwo={this.onClickTimerPlayerTwo}
         addIncrement={this.addIncrement}
+        timerStylePlayerOne={this.timerStylePlayerOne}
+        timerStylePlayerTwo={this.timerStylePlayerTwo}
         gameStart={this.gameStart}
-        />
+        />-
       </div>
     );
   }
