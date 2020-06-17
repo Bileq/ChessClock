@@ -3,9 +3,11 @@ import Moves from './Moves';
 
 const TimerTwo = props => {
     const handleItemList = () => {
-        props.onClickTimer()
+        props.onClickTimerPlayerTwo()
+        props.addIncrement()
+    } 
         
-    }
+
     return (
         <button style={timerStyle} onClick={handleItemList}>
             {props.hoursTwo}:
@@ -28,8 +30,9 @@ const timerStyle = {
     marginTop: '5px',
     width: '100%',
     height: '240px',
-    backgroundColor: 'rgba(5, 2, 2, 0.5)',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    /*backgroundColor: this.props.playerOneTurn
+    ? '#F3C13A' : 'rgba(5, 2, 2, 0.5)'*/
 };
 
 export default TimerTwo;

@@ -3,8 +3,8 @@ import Moves from './Moves';
 
 const Timer = props => {
     const handleItemList = () => {
-        props.onClickTimer()
-        //props.count()
+        props.onClickTimerPlayerOne()
+        props.addIncrement()
     }
     return (
        
